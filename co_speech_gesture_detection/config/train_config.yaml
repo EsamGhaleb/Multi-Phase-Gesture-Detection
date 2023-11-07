@@ -1,0 +1,76 @@
+Experiment_name: sequential_{}_recurrent_{}_training_{}_joint_fold_{}_lr_{}_to_submit
+
+# feeder, currently no preprocessing implemented so that we run the first evaluation using sequences of segments
+feeder: feeders.feeder_sequential.Feeder
+train_feeder_args:
+  data_path: co_speech_gesture_detection/data/data/{}/train_data_27_joint.npy
+  label_path: co_speech_gesture_detection/data/data/{}/train_27_label.pkl
+  debug: False
+  random_choose: False
+  random_shift: True
+  window_size: 18
+  normalization: True
+  random_mirror: True
+  random_mirror_p: 0.5
+  is_vector: False
+  max_length: 40
+  fold: 0
+
+
+
+test_feeder_args:
+  data_path: co_speech_gesture_detection/data/data/{}/test_data_27_joint.npy
+  label_path: co_speech_gesture_detection/data/data/{}/test_27_label.pkl
+  random_mirror: False
+  normalization: True
+  is_vector: False
+  debug: False
+  fold: 0
+
+# model for embeddings
+model: model.decouple_gcn_attn_sequential_wo_gpu.Model
+model_args:
+  num_class: 226
+  num_point: 27
+  num_person: 1
+  graph: graph.sign_27.Graph
+  groups: 16
+  block_size: 41
+  graph_args:
+    labeling_mode: 'spatial'
+  
+# labeler: 
+labeler: model.sequential_lablers.{}Labeler # 'IndependentLabeler', 'MarkovLabeler', 'AutoregressiveLabeler'
+labeler_args:
+  labeler_name: 'Independent' # 'Independent', 'Markov', 'Autoregressive'
+  joints_embed_dim: 256
+  recurrent_encoder: True # if True, the labeler is recurrent, Transformer 
+  training_seq: crf # teacher_forcing or crf 
+  num_labels: 5 # BIOE: begin, inside, outside, end, bos. 
+  labelset_size: 5
+  labels: ['outside', 'begin', 'inside', 'end', 'bos'] # BIOE: begin, inside, outside, end, bos. bos is used for the autoregressive & markov labelers
+  classes: ['outside', 'begin', 'inside', 'end'] # BIOE: begin, inside, outside, end
+  num_classes: 4 # number of classes for the labeler
+  max_seq_len: 40 # max number of segments (tokens) in a sequence
+  ngram_size: 3 # size of the ngram for the markov labeler
+  label_embed_dim: 32 # dimension of the tag embedding in the autoregressive and markov labelers
+  include_embeddings: False # if True, the labeler includes the embeddings of the segments (coming from the GCN model)
+  classifier: 'multi' # 'binary' or 'multi'
+
+weights: co_speech_gesture_detection/27_2_finetuned/joint_finetuned.pt # weights for the pre-trained model
+pretrained: True
+pretrained_model: 'SLR'
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [50]
+
+# training
+device: [0, 1]
+keep_rate: 0.9
+only_train_epoch: 1
+batch_size: 64
+test_batch_size: 64
+num_epoch: 80
+nesterov: True
+warm_up_epoch: 20
