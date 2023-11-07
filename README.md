@@ -56,3 +56,18 @@ Run training procedure using the follow command:
 
 > python main_sequential.py
 
+## Reference
+If you make use of the code or any materials in this repository, please cite the following paper:
+```
+@inproceedings{ghaleb2023cospeech,
+  title={Co-Speech Gesture Detection through Multi-Phase Sequence Labeling},
+  author={Ghaleb, Esam and Burenko, Ilya and Rasenberg, Marlou and Pouw, Wim and Uhrig, Peter and Holler, Judith and Toni, Ivan and \"{O}zy\"{u}rek, Aslı and Fernández, Raquel},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={}, % TBC
+  year={2024},
+  address={WAIKOLOA, HAWAII}, % 
+  publisher={IEEE/CVF}, 
+  doi={}, % TBC
+}
+
+```
