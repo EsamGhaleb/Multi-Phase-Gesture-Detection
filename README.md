@@ -1,7 +1,7 @@
 # Co-Speech Gesture Detection through Multi-Phase Sequence Labeling
 ---
 
-This repository contains the code of the WACV2024 paper titled "Co-Speech Gesture Detection through Multi-Phase Sequence Labeling." by [Esam Ghaleb](https://esamghaleb.github.io/), Ilya Burenko, Marlou Rasenberg, Wim Pouw, Peter Uhrig, Judith Holler, Ivan Toni, [Aslı Özyürek](https://www.mpi.nl/people/ozyurek-asli), [Raquel Fernández](https://staff.fnwi.uva.nl/r.fernandezrovira/). 
+This repository contains the code of the WACV2024 paper titled "Co-Speech Gesture Detection through Multi-Phase Sequence Labeling." by [Esam Ghaleb](https://esamghaleb.github.io/), [Ilya Burenko](https://www.linkedin.com/in/ilya-burenko-66313825/?originalSubdomain=ru), Marlou Rasenberg, Wim Pouw, Peter Uhrig, Judith Holler, Ivan Toni, [Aslı Özyürek](https://www.mpi.nl/people/ozyurek-asli), [Raquel Fernández](https://staff.fnwi.uva.nl/r.fernandezrovira/). 
 
 ## Generate data
 
