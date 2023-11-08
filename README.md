@@ -1,7 +1,7 @@
 # Co-Speech Gesture Detection through Multi-Phase Sequence Labeling
 ---
 
-This repository contains the code of the WACV2024 paper titled "Co-Speech Gesture Detection through Multi-Phase Sequence Labeling." by [Esam Ghaleb](https://esamghaleb.github.io/), [Ilya Burenko](https://www.linkedin.com/in/ilya-burenko-66313825/?originalSubdomain=ru), Marlou Rasenberg, Wim Pouw, Peter Uhrig, Judith Holler, Ivan Toni, [Aslı Özyürek](https://www.mpi.nl/people/ozyurek-asli), [Raquel Fernández](https://staff.fnwi.uva.nl/r.fernandezrovira/). 
+This repository contains the code of the WACV2024 paper titled "[Co-Speech Gesture Detection through Multi-Phase Sequence Labeling](https://github.com/EsamGhaleb/Multi-Phase-Gesture-Detection/blob/main/paper/GhalebEtAl-WACV2024.pdf)." by [Esam Ghaleb](https://esamghaleb.github.io/), [Ilya Burenko](https://www.linkedin.com/in/ilya-burenko-66313825/?originalSubdomain=ru), Marlou Rasenberg, Wim Pouw, Peter Uhrig, Judith Holler, Ivan Toni, [Aslı Özyürek](https://www.mpi.nl/people/ozyurek-asli), [Raquel Fernández](https://staff.fnwi.uva.nl/r.fernandezrovira/). 
 
 ## Generate data
 
@@ -71,3 +71,8 @@ If you make use of the code or any materials in this repository, please cite the
 }
 
 ```
+## Acknowlegements
+This work was funded by the NWO through a gravitation grant (024.001.006) to the LiI Consortium.
+Further funding was provided by the DFG (project number 468466485) and the Arts and Humanities Research Council (grant reference AH/W010720/1) to Peter Uhrig and Anna Wilson (University of Oxford). Raquel Fernández is supported by the European Research Council (ERC CoG grant agreement 819455).
+We thank the Dialogue Modelling Group members at UvA, especially Alberto Testoni and Ece Takmaz, for their valuable feedback. We extend our gratitude to Kristel de Laat for contributing to the segmentation of co-speech gestures.
+The authors gratefully acknowledge the scientific support and HPC resources provided by the Erlangen National High-Performance Computing Center (NHR@FAU) of the Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) under the NHR project b105dc to Peter Uhrig. NHR funding is provided by federal and Bavarian state authorities. NHR@FAU hardware is partially funded by the German Research Foundation (DFG) – 440719683.
